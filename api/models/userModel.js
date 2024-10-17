@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timeStamp: true }
+  { timestamps: true }
 ); // timestamp will give info of timeof cration and edit
 
 const User = mongoose.model("User", userSchema);
