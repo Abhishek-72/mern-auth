@@ -23,8 +23,10 @@ app.use("/api/auth", authRoutes);
 
 // Creating middleware to handling error
 app.use((err, req, res, next) => {
+  // console.error("Error occurred:", err); // Log the error for debugging
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal server error";
+
   return res.status(statusCode).json({
     success: false,
     message,
