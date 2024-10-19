@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoute.js";
 import authRoutes from "./routes/authRoute.js";
+import cookieParser from "cookie-parser";
 dotenv.config();
 const DB = process.env.DATABASE;
 mongoose
@@ -14,6 +15,7 @@ mongoose
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 const port = 3000;
 app.listen(port, () => {
   console.log(`server is listening on ${port}!`);
