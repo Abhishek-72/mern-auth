@@ -10,15 +10,18 @@ import PrivateRoute from "./components/PrivateRoute";
 export default function App() {
   return (
     <BrowserRouter>
-      {/*Header*/}
+      {/* Header */}
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/sign-in" element={<SignIn />}></Route>
-        <Route path="/sign-up" element={<SignUp />}></Route>
+        {/* Public Routes */}
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+
+        {/* Private Routes */}
         <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
